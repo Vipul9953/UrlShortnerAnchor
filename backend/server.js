@@ -59,7 +59,7 @@ app.use(bodyParser.json());
 // Your routes go here
 app.get('/', (req, res) => {
     // Handle your endpoint logic
-    res.send('hi'); // Commented out to avoid sending two responses in the same handler
+console.log("done");
     res.json({ message: 'Hello from Vercel serverless function!' });
   });
   
