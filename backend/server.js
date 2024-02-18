@@ -57,9 +57,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Your routes go here
-app.get('/api/v1/yourEndpoint', (req, res) => {
-  // Handle your endpoint logic
-  res.json({ message: 'Hello from Vercel serverless function!' });
-});
+app.get('/', (req, res) => {
+    // Handle your endpoint logic
+    res.send('hi'); // Commented out to avoid sending two responses in the same handler
+    res.json({ message: 'Hello from Vercel serverless function!' });
+  });
+  
 
 module.exports = app;
