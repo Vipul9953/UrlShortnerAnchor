@@ -7,7 +7,7 @@
 // const path = require('path')
 // // Enable CORS with the appropriate origin
 // app.use(cors({
-//     origin: ["https://url-shortner-anchor-mern-dev.vercel.app"],
+//     origin: ["https://url-shortner-anchor-mavg.vercel.app/"],
 //     methods: ["GET", "POST", "PUT", "DELETE"],
 //     credentials: true
 // }));
