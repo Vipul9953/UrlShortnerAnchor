@@ -6,12 +6,13 @@ const cookieParser = require("cookie-parser");
 const cors = require('cors');
 const path = require('path')
 // Enable CORS with the appropriate origin
-const corsOptions = {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000', // Replace with your actual frontend URL on Vercel
-    credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+)); 
 
 //midlleware
 //using middleware
@@ -42,6 +43,6 @@ app.use(errorMiddleware);
 
 
 
-app.listen(process.env.NEXT_PUBLIC_API_URL || process.env.PORT, ()=>{
+app.listen(process.env.NEXT_PUBLIC_API_URL || process.env.PORT || 4000, ()=>{
     console.log(`server is working at ${process.env.PORT}`);
 })
