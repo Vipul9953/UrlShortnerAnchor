@@ -6,11 +6,7 @@
 // const cors = require('cors');
 // const path = require('path')
 // // Enable CORS with the appropriate origin
-// app.use(cors({
-//     origin: ["https://url-shortner-anchor-mavg.vercel.app/"],
-//     methods: ["GET", "POST", "PUT", "DELETE"],
-//     credentials: true
-// }));
+
 
 
 // //midlleware
@@ -53,7 +49,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ["https://url-shortner-anchor-mavg.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(bodyParser.json());
 
 // Your routes go here
