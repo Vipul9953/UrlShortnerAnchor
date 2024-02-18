@@ -6,13 +6,12 @@ const cookieParser = require("cookie-parser");
 const cors = require('cors');
 const path = require('path')
 // Enable CORS with the appropriate origin
-app.use(cors(
-    {
-        origin: ["https://url-shortner-anchor-mern-dev.vercel.app/"],
-         methods: ["GET", "POST", "PUT", "DELETE"], 
+app.use(cors({
+    origin: ["https://url-shortner-anchor-mern-dev.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
-    }
-)); 
+}));
+
 
 //midlleware
 //using middleware
