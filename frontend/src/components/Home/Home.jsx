@@ -58,11 +58,11 @@ const Home = () => {
   return (
     <Box m={'1.7rem'}>
 
-<Typography variant='h5' color={'green'} textAlign={'center'} >Anchors URL Shortner   
-<Button   sx={{ position: 'absolute', top: 27, right: 37 , color:"purple"}} onClick={logoutHandler}>Logout</Button></Typography>
+<Typography variant='h5' color={'green'} textAlign={'center'} marginRight={'3.2rem'}>Anchors URL Shortner   
+<Button   sx={{ position: 'absolute', top: 7, right: 6 , color:"purple"}} onClick={logoutHandler}>Logout</Button></Typography>
 
-< WavingHandIcon  style={{color:"green"}}bgc='green'/>
-<Typography style={{ display: 'inline', marginLeft: '18px' }} variant='h6' color='purple' fontWeight='bold'>
+< WavingHandIcon  style={{color:"green", marginTop:'1.7rem'}}bgc='green'/>
+<Typography style={{ display: 'inline' }} variant='h6' color='purple' fontWeight='bold'>
   {user.name}
 </Typography>
 
@@ -74,7 +74,7 @@ const Home = () => {
   <TextField id="outlined-basic" label="Enter Long Url here..." fullWidth  variant="outlined" value={originalUrl} onChange={(e)=>setOrginalUrl(e.target.value)}/> 
   </Grid>
   <Grid item xs={2}>
-  <Button variant="text" fullWidth    style={{ color: 'green', fontWeight:"bolder", height:"100%"  }} onClick={createUser}>Generate</Button>
+  <Button variant="text" fullWidth    style={{ color: 'green', fontWeight:"bolder", height:"100%", marginRight:"1.2rem"  }} onClick={createUser}>Generate</Button>
   </Grid>
   
 </Grid>
