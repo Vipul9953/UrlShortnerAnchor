@@ -44,24 +44,24 @@
 
 
 // api/index.js
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const cors = require('cors');
 
-const app = express();
-app.use(cors({
-    origin: ["https://url-shortner-anchor-mavg.vercel.app/"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
-}));
-app.use(bodyParser.json());
+// const app = express();
+// app.use(cors({
+//     origin: ["https://url-shortner-anchor-mavg.vercel.app/"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true
+// }));
+// app.use(bodyParser.json());
 
-// Your routes go here
-app.get('/', (req, res) => {
-    // Handle your endpoint logic
-console.log("done");
-    res.json({ message: 'Hello from Vercel serverless function!' });
-  });
+// // Your routes go here
+// app.get('/', (req, res) => {
+//     // Handle your endpoint logic
+// console.log("done");
+//     res.json({ message: 'Hello from Vercel serverless function!' });
+//   });
   
 
 module.exports = app;
