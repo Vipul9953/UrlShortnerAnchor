@@ -1,5 +1,5 @@
 {
-  "name": "anchors",
+  // "name": "anchors",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
