@@ -3,12 +3,22 @@ const app = express();
 const cookieParser = require("cookie-parser"); 
 const  connectDatabase = require("./config/database"); 
 const dotenv = require('dotenv');
+const errorMiddleware = require("./middleware/error");
+
 require("dotenv").config()
+
+
 
 // Using Middlewares
 app.use(express.json());
-// app.use(express.urlencoded());
+app.use(errorMiddleware);
+app.use(express.urlencoded());
 app.use(cookieParser());
+
+
+
+ 
+
 
 // Importing Routes
 const user = require("./routes/userRoute");
@@ -27,4 +37,6 @@ app.listen(process.env.PORT, () => {
 });
 
 
-module.exports = app;
+module.exports = app; 
+
+  
