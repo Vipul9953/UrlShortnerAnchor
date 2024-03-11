@@ -10,7 +10,13 @@ require("dotenv").config()
 
 
 // Using Middlewares
-app.use(cors());
+app.use(
+    cors({
+        origin:["https://url-shortner-anchor-fijbs8jq0-vipul-kumars-projects-b376d108.vercel.app/"],
+        methods:["POST", "GET", "PUT", "DELETE"],
+        credentials:true,
+    })
+)
 app.use(express.json());
 app.use(errorMiddleware);
 app.use(express.urlencoded());
