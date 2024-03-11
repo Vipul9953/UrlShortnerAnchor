@@ -4,12 +4,13 @@ const cookieParser = require("cookie-parser");
 const  connectDatabase = require("./config/database"); 
 const dotenv = require('dotenv');
 const errorMiddleware = require("./middleware/error");
-
+const cors = require('cors');
 require("dotenv").config()
 
 
 
 // Using Middlewares
+app.use(cors());
 app.use(express.json());
 app.use(errorMiddleware);
 app.use(express.urlencoded());
