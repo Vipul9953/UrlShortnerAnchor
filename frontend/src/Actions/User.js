@@ -108,7 +108,7 @@ export const registerUser =
       });
 
       const { data } = await axios.post(
-        "/api/v1/register",
+        "https://urlshortapp.onrender.com/api/v1/register",
         { name, email, password },
         {
           headers: {
