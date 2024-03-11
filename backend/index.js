@@ -12,7 +12,9 @@ require("dotenv").config()
 // Using Middlewares
 app.use(
     cors({
-        origin:["https://url-shortner-anchor-fijbs8jq0-vipul-kumars-projects-b376d108.vercel.app/"],
+        origin:["https://url-shortner-anchor-fijbs8jq0-vipul-kumars-projects-b376d108.vercel.app/", "https://urlshortapp.onrender.com
+
+"],
         methods:["POST", "GET", "PUT", "DELETE"],
         credentials:true,
     })
