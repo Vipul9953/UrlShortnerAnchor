@@ -68,10 +68,11 @@ exports.registerUser =  catchAsyncErrors( async(req, res, next)=>{
    
 
     const user = await User.findOne({email:req.body.email});
+
     if(!user){
      return next(new ErrorHandler("User not found", 404))
     }
-   
+        sendToken(user, 200, res);
     //get resetpasswrd
  const resetToken  = user.getResetPasswordToken();
  await user.save({validateBeforeSave:false});
@@ -105,7 +106,7 @@ exports.registerUser =  catchAsyncErrors( async(req, res, next)=>{
   
    //reset Password
    exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
- 
+  
     const resetPasswordToken = crypto
       .createHash("sha256")
       .update(req.params.token)
@@ -119,7 +120,7 @@ exports.registerUser =  catchAsyncErrors( async(req, res, next)=>{
     if (!user) {
       return next(new ErrorHandler('Token is invalid or has expired', 401));
     }
-
+ sendToken(user, 200, res);
     user.password = req.body.password;
 
     user.resetPasswordToken = undefined;
@@ -137,7 +138,7 @@ exports.registerUser =  catchAsyncErrors( async(req, res, next)=>{
 //get my urls
 exports.getMyUrls = catchAsyncErrors(async (req, res) => {
     const user = await User.findById(req.user._id);
-
+     sendToken(user, 200, res);
     console.log("urls");
     const allURL = [];
 
