@@ -13,7 +13,10 @@ export const loginUser = (email, password) => async (dispatch) => {
           "Content-Type": "application/json",
         },
       }
-    );
+                                      console.log('data', data);
+console.log('data.token', data.token);
+                                     
+                                     );
 
     dispatch({
       type: "LoginSuccess",
