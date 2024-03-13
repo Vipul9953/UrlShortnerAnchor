@@ -58,14 +58,7 @@ export const getMyUrl = ()=> async(dispatch)=>{
     });
 
 
-    const {data} = await axios.get("https://urlshortapp.onrender.com/api/v1/my/urls", 
-                                  
-                       {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-                                );
+    const {data} = await axios.get("https://urlshortapp.onrender.com/api/v1/my/urls"  );
 
     dispatch({
       type:"myUrlSuccess",
