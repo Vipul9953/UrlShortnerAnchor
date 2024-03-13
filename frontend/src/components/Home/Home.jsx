@@ -23,7 +23,7 @@ const Home = () => {
    
    const myUrls = async()=>{
     try {
-      const {data} = await axios.get("/api/v1/my/urls");
+      const {data} = await axios.get("https://urlshortapp.onrender.com/api/v1/my/urls");
       console.log(data.allURL);
       setArr(data.allURL);
      } catch (error) {
@@ -36,7 +36,7 @@ const Home = () => {
 
   const createUser = async()=>{
    try {
-     const {data} = await axios.post(`/api/v1/short`,{originalUrl});
+     const {data} = await axios.post(`https://urlshortapp.onrender.com/api/v1/short`,{originalUrl});
       console.log(data);
       setOrginalUrl("");
 
