@@ -9,13 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
 
-  const { error, message } = useSelector((state) => state.user);
+  const { error, message, user } = useSelector((state) => state.user);
 
   const loginHandler = async (e) => {
     e.preventDefault();
     console.log(message);
     await dispatch(loginUser(email, password));
-    console.log(message);
+    console.log("user", user);
   };
 
   useEffect(() => {
