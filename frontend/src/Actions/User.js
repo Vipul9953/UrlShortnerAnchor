@@ -8,13 +8,14 @@ export const loginUser = (email, password) => async (dispatch) => {
       type: "LoginRequest",
     });
 
-    const { data } = await axios.post("https://urlshortapp.onrender.com/api/v1/login", { email, password }, {
+    console.log("working");
+    const data  = await axios.post("https://urlshortapp.onrender.com/api/v1/login", { email, password }, {
         headers: {
           "Content-Type": "application/json",
         },
       }
-                                      console.log('data', data);
-console.log('data.token', data.token);
+                                      console.log("data", data);
+console.log("data.token", data.token);
                                      
                                      );
 
