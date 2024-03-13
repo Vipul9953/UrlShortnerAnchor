@@ -32,7 +32,6 @@ var data;
 
 export const loadUser = () => async (dispatch) => {
   try {
-    console.log("loaduser");
     dispatch({
       type: "LoadUserRequest",
     });
@@ -59,8 +58,12 @@ export const getMyUrl = ()=> async(dispatch)=>{
     });
 
 
-    const {data} = await axios.get("https://urlshortapp.onrender.com/api/v1/my/urls");
-    console.log(data);
+    const {data} = await axios.get("https://urlshortapp.onrender.com/api/v1/my/urls", 
+                                  
+                                  headers: {
+          "Content-Type": "application/json",
+        },
+                                );
 
     dispatch({
       type:"myUrlSuccess",
