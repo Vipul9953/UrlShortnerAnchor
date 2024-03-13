@@ -26,9 +26,6 @@ var data;
   }
 
 
-
-    console.log('data", data);
-                console.log("data.token", data.token);
 };
 
 
