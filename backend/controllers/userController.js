@@ -137,9 +137,10 @@ exports.registerUser =  catchAsyncErrors( async(req, res, next)=>{
 
 //get my urls
 exports.getMyUrls = catchAsyncErrors(async (req, res) => {
-    const user = await User.findById(req.user._id);
-     sendToken(user, 200, res);
     console.log("urls");
+  const user = await User.findById(req.user._id);
+     sendToken(user, 200, res);
+
     const allURL = [];
 
     for (let i = 0; i < user.url.length; i++) {
