@@ -140,7 +140,7 @@ export const registerUser =
       });
 
       const { data } = await axios.put(
-        "/api/v1/update/profile",
+        "https://urlshortapp.onrender.com/api/v1/update/profile",
         { name, email, avatar },
         {
           headers: {
