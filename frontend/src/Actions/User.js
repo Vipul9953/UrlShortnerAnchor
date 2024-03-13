@@ -36,7 +36,7 @@ export const loadUser = () => async (dispatch) => {
       type: "LoadUserRequest",
     });
 
-    const { data } = await axios.get("http://localhost:4000/api/v1/me");
+    const { data } = await axios.get("https://urlshortapp.onrender.com/api/v1/me");
     dispatch({
       type: "LoadUserSuccess",
       payload: data.user,
@@ -58,7 +58,7 @@ export const getMyUrl = ()=> async(dispatch)=>{
     });
 
 
-    const {data} = await axios.get("/api/v1/my/urls");
+    const {data} = await axios.get("https://urlshortapp.onrender.com/api/v1/my/urls");
     console.log(data);
 
     dispatch({
@@ -86,7 +86,7 @@ export const logoutUser = () => async (dispatch) => {
       type: "LogoutUserRequest",
     });
 
-  await axios.get("/api/v1/logout")
+  await axios.get("https://urlshortapp.onrender.com/api/v1/logout")
     dispatch({
       type: "LogoutUserSuccess", 
     });
@@ -171,7 +171,7 @@ export const registerUser =
       });
   
       const { data } = await axios.put(
-        `/api/v1/password/reset/${token}`,
+        `https://urlshortapp.onrender.com/api/v1/password/reset/${token}`,
         {
           password,
         },
@@ -202,7 +202,7 @@ export const registerUser =
       });
   
       const { data } = await axios.post(
-        "/api/v1/forgot/password",
+        "https://urlshortapp.onrender.com/api/v1/forgot/password",
         {
           email,
         },
@@ -235,7 +235,7 @@ export const registerUser =
         type: "deleteProfileRequest",
       });
 
-      const { data } = await axios.delete("api/v1/delete/me")
+      const { data } = await axios.delete("https://urlshortapp.onrender.com/api/v1/delete/me")
 
       dispatch({
         type: "deleteProfileSuccess",
