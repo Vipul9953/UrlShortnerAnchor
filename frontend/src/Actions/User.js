@@ -1,25 +1,19 @@
 import axios from "axios";
 
 export const loginUser = (email, password) => async (dispatch) => {
+var data;
   try {
-    
-
     dispatch({
       type: "LoginRequest",
     });
  
-    const data  = await axios.post("https://urlshortapp.onrender.com/api/v1/login", { email, password }, {
+     data  = await axios.post("https://urlshortapp.onrender.com/api/v1/login", { email, password }, {
         headers: {
           "Content-Type": "application/json",
         },
       }
-                                    
-                                     
-                                     );
+  );
 
-
-    console.log('data", data);
-                console.log("data.token", data.token);
     dispatch({
       type: "LoginSuccess",
       payload: data.user,
@@ -30,6 +24,11 @@ export const loginUser = (email, password) => async (dispatch) => {
       payload: error.response.data.message,
     });
   }
+
+
+
+    console.log('data", data);
+                console.log("data.token", data.token);
 };
 
 
