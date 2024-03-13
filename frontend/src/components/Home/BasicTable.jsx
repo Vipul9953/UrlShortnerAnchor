@@ -20,7 +20,7 @@ export default function BasicTable({myUrls, arr}) {
 
   const goToUrl = async (shortCode) => {
     try {
-      const { data } = await axios.get(`/api/v1/short/${shortCode}`);
+      const { data } = await axios.get(`https://urlshortapp.onrender.com/api/v1/short/${shortCode}`);
       window.open(data.originalUrl, '_blank');
       myUrls();
     } catch (error) {
@@ -30,7 +30,7 @@ export default function BasicTable({myUrls, arr}) {
 
 const deleteUrl = async(id)=>{
     try {
-      await axios.delete(`/api/v1/delete/${id}`);
+      await axios.delete(`https://urlshortapp.onrender.com/api/v1/delete/${id}`);
       myUrls();
     } catch (error) {
       console.log(error);
